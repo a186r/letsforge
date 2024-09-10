@@ -2,5 +2,17 @@
 src = "src"
 out = "out"
 libs = ["lib"]
+solc_version = "0.8.27"
+evm_version = "paris" # Cancun will be tested in the CI.
+auto_detect_solc = false
+optimizer = true
+optimizer_runs = 1_000
+
+[profile.default.fuzz]
+runs = 256
+
+[invariant]
+depth = 15
+runs = 10
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
